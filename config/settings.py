@@ -1,7 +1,9 @@
 from pathlib import Path
 import os
-
+import dj_database_url
 from dotenv import load_dotenv
+import django_heroku
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -127,3 +129,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
 ]
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+django_heroku.settings(locals())

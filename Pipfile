@@ -11,6 +11,8 @@ python-dotenv = "*"
 psycopg2-binary = "==2.8.5"
 whitenoise = "==5.1.0"
 gunicorn = "==19.9.0"
+django-heroku = "*"
+dj-database-url = "*"
 
 [dev-packages]
 autopep8 = "*"
